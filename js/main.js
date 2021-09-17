@@ -1,11 +1,15 @@
-alert("Welcome to the Chi-Fou-Mi Game, are you ready?"); // welcoming message
+alert("Welcome to the Chi-Fou-Mi Game. Are you ready to play?"); // welcoming message
 
-var userName = prompt("Please enter your name?"); // asking for user's name
+var userName = prompt("Please enter your name?") // asking for user's name
+// checking userName
+while (userName.length < 2 || userName.length > 20) {
+    userName = prompt("Please enter your name?")
+} 
 
 var choice = {
-    "Rock" : ["Scissors", "Rock", "Paper"],
-    "Paper" : ["Rock", "Paper", "Scissors"],
-    "Scissors" : ["Paper", "Scissors", "Rock"]
+    "rock" : ["scissors", "rock", "paper"],
+    "paper" : ["rock", "paper", "scissors"],
+    "scissors" : ["paper", "scissors", "rock"]
 }
 let userScore = 0;
 let computerScore = 0;
@@ -20,13 +24,13 @@ while (userScore < 3 && computerScore < 3) { // loop for three victories
     
     // comparing values to determine the winner
     if (userChoice === computerChoice) {
-        alert("It's a draw\n"+ userName + " : " + userScore + " / computer : " + computerScore);
+        alert("It's a draw\n"+ userName + " : " + userScore + "  |  computer : " + computerScore);
     } else if (userChoice > computerChoice) {
         userScore++
-        alert("You win this round\n" + userName + " : " + userScore + " / computer : " + computerScore);
+        alert("You win this round\n" + userName + " : " + userScore + "  |  computer : " + computerScore);
     } else {
         computerScore++
-        alert("Sorry you lost this round\n"+ userName + " : " + userScore + " / computer : " + computerScore)
+        alert("Sorry you lost this round\n"+ userName + " : " + userScore + "  |  computer : " + computerScore)
     }
 }
 // end of the game
