@@ -1,8 +1,7 @@
 alert("Welcome to the Chi-Fou-Mi Game. Are you ready to play?"); // welcoming message
 var userName = prompt("Please enter your name?"); // asking for user's name
-// checking user's name
-var num = ["0", "1" , "2", "3", "4", "5", "6", "7", "8", "9", " "];
 var arrName = userName.split(""); // putting each letter of userName in a array to check if there is a number
+var num = ["0", "1" , "2", "3", "4", "5", "6", "7", "8", "9", " "];
     for (var j=0; j<num.length;j++){
         while (arrName.includes(num[j]) || userName.length < 2 || userName.length > 20){
             userName = prompt("Please enter your name?");
